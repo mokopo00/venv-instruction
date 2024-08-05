@@ -84,7 +84,7 @@ Python 3.12.4
 ```
 python3 -m venv .venv
 ```
-作業ディレクトリのvenvというディレクトリ以下に仮想環境が作成される。<br>
+作業ディレクトリの```.venv```というディレクトリ以下に仮想環境が作成される。<br>
 その後、venvで作成した仮想環境```.venv```を起動。
 ```
 source .venv/bin/activate
