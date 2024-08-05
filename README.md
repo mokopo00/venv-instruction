@@ -77,6 +77,17 @@ python3 --version
 ->
 Python 3.12.4
 ```
+その他、pipでインストール済みのパッケージ一覧を確認。
+```
+pip list
+->
+Package Version
+------- -------
+pip     24.0
+
+[notice] A new release of pip is available: 24.0 -> 24.2
+[notice] To update, run: pip install --upgrade pip
+```
 
 ### 2. venvで仮想環境を作成
 プロジェクトに合わせた任意の名前を指定し、venvで仮想環境を作成。<br>
@@ -96,7 +107,8 @@ source .venv/bin/activate
 ```
 (.venv)python3 -m pip install --upgrade pip
 ```
-次に、パッケージをインストール。今回の例では、スクレイピングライブラリ(Beautifulsoup)をインストール。
+次に、パッケージをインストール。今回の例では、スクレイピングライブラリ(Beautifulsoup)をインストール。<br>
+このインストールの影響範囲は、仮想環境内のみに限定される。
 ```
 (.venv)pip install beautifulsoup4
 ```
@@ -131,4 +143,16 @@ python3 test.py
 ModuleNotFoundError: No module named 'bs4'
 ```
 このエラーから、ローカル環境にはインストールされていないことが確認できた。<br>
+理由は、上述の通り、仮想環境内のコマンドがローカル環境には反映されないから。
+パッケージ一覧を確認すると、仮想環境に入る前と同じであることが確認できる。
+```
+pip list
+->
+Package Version
+------- -------
+pip     24.0
+
+[notice] A new release of pip is available: 24.0 -> 24.2
+[notice] To update, run: pip install --upgrade pip
+```
 以上の手順で、MacでPythonの開発環境および仮想環境の構築が完了。<br>
